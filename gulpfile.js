@@ -31,7 +31,7 @@ gulp.task("autoprefixer", () => {
         .pipe(gulp.dest("default/css"));
 });
 
-gulp.task("watch", ["browser-sync", "sass"], () => {
+gulp.task("watch", ["browser-sync", "sass", "autoprefixer"], () => {
     gulp.watch("default/sass/*.sass", ["sass", browserSync.reload]);
     gulp.watch("default/*.html", browserSync.reload);
     gulp.watch("default/css/*.css", ["autoprefixer", browserSync.reload]);
